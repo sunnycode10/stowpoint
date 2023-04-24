@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Stowpoint - Engineering Procurment</title>
+
+<!-- Stylesheets -->
+<link href="{% static 'css/style.css'%}" rel="stylesheet">
+<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+<link rel="icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
+
+</head>
+
+<!-- page wrapper -->
+<body class="boxed_wrapper">
+
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- preloader -->
+
+
+    <!-- search-box-layout -->
+    <div class="wraper_flyout_search">
+        <div class="table">
+            <div class="table-cell">
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-close">
+                    <span class="flyout-search-close-line"></span>
+                    <span class="flyout-search-close-line"></span>
+                </div>
+                <div class="flyout_search">
+                    <div class="flyout-search-title">
+                        <h4>Search</h4>
+                    </div>
+                    <div class="flyout-search-bar">
+                        <form role="search" method="get" action="#">
+                            <div class="form-row">
+                                <input type="search" placeholder="Type to search..." value="" name="s" required="">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search-box-layout end -->
+
+
+    <!-- main header -->
+    <header class="main-header style-two">
+        <!-- header-top -->
+        <div class="header-top">
+            <div class="container">
+                <div class="inner-container clearfix">
+                    <ul class="header-info pull-left">
+                        <li>Time : Monday-Friday 09am-5pm</li>
+                        <li><i class="flaticon-telephone-auricular-with-cable"></i><a href="tel:(+234)07064449451">(234) 0706 444 9451</a></li>
+                    </ul>
+                    <ul class="header-nav pull-right">
+                        <!-- <li><a href="">Careers</a></li> -->
+                        <li><a href="{% url 'contact' %}">Contacts</a></li>
+                        <li>
+                            <div class="language dropdownn">
+                                <a class="dropdown-toggle" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">Eng</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                                    <li><a href="#">Eng</a></li>
+                                    <li><a href="#">Chi</a></li>
+                                    <li><a href="#">Ger</a></li>
+                                    <li><a href="#">Fre</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- header-top end -->
+
+        <!-- header-bottom -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="outer-container">
+                    <div class="nav-outer clearfix">
+                        <div class="menu-area pull-left clearfix">
+                            <figure class="logo-box"><a href="{% url 'home' %}"><img src="{% static 'images/logo-main.png'%}" alt=""></a></figure>
+                            <nav class="main-menu navbar-expand-lg">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->      
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li class=""><a href="{% url 'home' %}">Home</a>
+                                        </li>
+                                        <li class="current"><a href="{% url 'about' %}">About Us</a>
+                                        </li> 
+                                        <li class="dropdown"><a href="{% url 'services' %}">Our services</a>
+                                            <ul>
+
+                                                <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                                <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                                <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                                <li><a href="{% url 'marine' %}">Marine logistic & Offshore </a></li>
+                                                <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                                <li><a href="{% url 'manpower' %}">Skilled Manpower  </a></li>
+                                            </ul>
+                                        </li>                              
+                                        <li class=""><a href="{% url 'contact' %}">Contact Us</a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="info-box pull-right clearfix">
+                            <!-- <div class="shop-cart"><a href="shop.html"><i class="flaticon-shopping-bag"></i><span>0</span></a></div> -->
+                            <div class="search-box">
+                                <div class="header-flyout-searchbar">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+                            <div class="btn-box"><a href="{% url 'contact' %}"><i class="fas fa-arrow-right"></i>Support</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header-bottom end -->
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box"><a href="#"><img src="{% static 'images/logo-stick.png'%}" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu navbar-expand-lg">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->      
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li class=""><a href="{% url 'home' %}">Home</a>
+                                </li>
+                                <li class="current"><a href="{% url 'about' %}">About Us</a>
+                                </li> 
+                                <li class="dropdown"><a href="{% url 'services' %}">Our services</a>
+                                    <ul>
+
+                                        <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                        <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                        <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                        <li><a href="{% url 'marine' %}">Marine logistic & Offshore </a></li>
+                                        <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                        <li><a href="{% url 'manpower' %}">Skilled Manpower  </a></li>
+                                    </ul>
+                                </li>                              
+                                <li class=""><a href="{% url 'contact' %}">Contact Us</a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sticky-header end -->
+    </header>
+    <!-- main-header end -->
+
+
+    <!-- about-banner -->
+    <section class="contact-banner centred" style="background-image: url('/static/images/background/contact-bg.jpg');">
+        <div class="container">
+            <div class="content-box">
+                <h1>About Us</h1>
+                <!-- <h3>If you have any general enquiries, we'd love to hear from you</h3> -->
+            </div>
+        </div>
+    </section>
+    <!-- about-banner end -->
+
+
+    <!-- about-style-five -->
+    <section class="about-style-five">
+        <div class="container">
+            <div class="inner-container">
+                <div class="title-box">
+                    <h1>Welcome To Stowpoint<br />Services Limited (SPs)</h1>
+                    <div class="text">
+                        <p>
+                            Stowpoint Services Limited is an indigenous oil and gas servicing company incorporated in 2017 with administrative office in Lagos Nigeria.
+                            We have a team of competent professionals for quality supply and delivery of our clients needs.
+                        </p>
+                        <p>
+                            Our team of professionals with vast experience in the oil and gas industry and other related industries to carry out 
+                            Procurement Support services, Supply of Commodities/Production Chemicals, provision of swamp/earth moving equipment,
+                             Marine services, Civil works and provision of skilled Manpower etc.</p>
+                        <!-- <p>Renewable Energy: The United States is home to a thriving renewable energy industry</p> -->
+                    </div>
+                </div>
+                <div class="upper-content">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12 col-sm-12 image-column">
+                            <figure class="image-box"><img src="{% static 'images/resource/about-4.jpg'%}" alt=""></figure>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12 content-column">
+                            <div class="content-box wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="icon-box"><i class="flaticon-script"></i></div>
+                                <h3 class="group-title">Our Mission</h3>
+                                <p>To provide uncompromised quality, affordable products and innovative services to all our clients, with due emphasis on the specifications of our clients & the standards of regulatory bodies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lower-content">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-12 col-sm-12 left-column">
+                            <div class="content-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="icon-box"><i class="flaticon-action"></i></div>
+                                <h3 class="group-title">Vision</h3>
+                                <p>To set the pace for providing innovative and exceptional services to our clientele, with the objective of being the service provider of choice to every player in the Oil & Gas Industry</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-12 col-sm-12 right-column">
+                            <div class="content-box">
+                                <h3 class="group-title">Core Valu</h3>
+                                <div class="text">
+                                    <p><b>Self-Awareness:</b> We understand our capabilities, strengths and weaknesses</p>
+                                    <p><b>Foresight:</b> We are aware of the ever growing technological trends</p>
+                                    <p><b>Adaptability:</b> We do not limit ourselves nor are we afraid to grow or expand</p>
+                                    <p><b>Integrity:</b> We never sacrifice quality for financial gain</p> 
+                                    <p><b>Honesty:</b> We are always upfront with your clientst </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about-style-five end -->
+
+    <!-- statistics-section -->
+    <section class="statistics-section" style="background-image: url('/static/images/background/bg-crane.jpg');">
+        <div class="container">
+            <div class="outer-container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-12 col-md-12 offset-xl-5 inner-column">
+                        <div class="inner-box wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <!-- <div class="video-box"><a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a></div> -->
+                            <div class="top-box">
+                                <h2>MODERN SLAVERY ACT TRANSPARENCY STATEMENT</h2>
+                                <br>
+                                <h4>INTRODUCTION</h4>
+                                <div class="text">
+                                    This statement has been published in accordance with the Modern Slavery Act 2015. It sets out the steps taken by Stowpoint Services Limited (SPS) to prevent modern slavery and human trafficking in its business and supply chains.SPS is committed to ensuring that our business has no involvement in modern slavery or human trafficking. Modern slavery is a crime and a violation of fundamental human rights. It takes various forms, such as slavery, servitude, forced or compulsory labor and human trafficking, all of which have in common the deprivation of a person's liberty by another in order to exploit them for personal or commercial gain. SPS will not support or deal with any business knowingly involved in modern slavery or human trafficking.
+                                </div>
+                                <br>
+                                <h4>OUR POLICIES ON SLAVERY & HUMAN TRACFFICKING </h4>
+                                <div class="text">
+                                    We are committed to ensuring that there is no modern slavery or human trafficking in our supply chains or in any part of our business.
+                                    Our Policies reflects our commitment to acting ethically and with integrity in all our business relationships and to implementing and enforcing effective systems and controls to ensure slavery and human trafficking is not taking place anywhere in our business and in our supply chains.
+                                    Accompanying this is our Code of Conduct company policy which outlines our expectations regarding employeesâ€™ behavior towards their colleagues, supervisors and the overall organization. We promote freedom of expression and open communication, Whistleblowing Policy which provides a system for our employees to escalate slavery and human trafficking issues and breaches of our Group policies. Our policies are reviewed annually. There have been no breaches or suspected breaches so far.
+                                </div>
+                                <br>
+                                <h4>DUE DILIGENCE PROCESSES FOR SLAVERY & HUMAN TRACFFICKING</h4>
+                                <div class="text">
+                                    <div class="text">
+                                        We are committed to ensuring that there is no modern slavery or human trafficking in our supply chains or in any part of our business.
+                                        Our Policies reflects our commitment to acting ethically and with integrity in all our business relationships and to implementing and enforcing effective systems and controls to ensure slavery and human trafficking is not taking place anywhere in our business and in our supply chains.
+                                        Accompanying this is our Code of Conduct company policy which outlines our expectations regarding employeesâ€™ behavior towards their colleagues, supervisors and the overall organization. We promote freedom of expression and open communication, Whistleblowing Policy which provides a system for our employees to escalate slavery and human trafficking issues and breaches of our Group policies. Our policies are reviewed annually. There have been no breaches or suspected breaches so far.
+                                        <ul>
+                                            <li>-Identify inappropriate employment practices;</li>
+                                            <li>-Identify, assess and monitor other potential risk areas;</li>
+                                            <li>-Mitigate the risk of slavery and human trafficking occurring;</li>
+                                            <li>-Protect whistleblowers; and</li>
+                                            <li>-Investigate reports of Modern Slavery.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br>
+                                <h4>TRAINING</h4>
+                                <div class="text">
+                                    To ensure a high level of understanding of the risks of modern slavery and human trafficking in our business, in our supply chains and in our business partners, we provide relevant in-house training to our colleagues. Under our Supplier Code of Conduct we also require our business partners to provide regular and relevant training to their staff and suppliers.
+                                </div>
+                            </div>
+                            <!-- <div class="lower-box">
+                                <h2>The safe choice for your supply needs Energy & Power</h2>
+                                <div class="text">Analyze overall plant capacity by planning for incoming supply and market demand</div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- testimonial-style-five -->
+    <section class="testimonial-style-five about-page centred">
+        <div class="container">
+            <div class="sec-title">
+                <!-- <div class="top-text">Client</div> -->
+                <h1>Our Clients</h1>
+            </div>
+            <div class="three-column-carousel owl-carousel owl-theme">
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/wat.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Watersmith</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/elc.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Elcrest</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/ndw.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">ND Western</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/amn.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">AMNI</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/agi.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">AGIP</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/bws.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#"> BwOffshore</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/nln.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">NLNG</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/npd.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">NPDC</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/sep.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Seplat Energy</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/che.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Chevron</a></h4>
+                            <!-- <span class="designation">Senior LOTT</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/she.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Shell</a></h4>
+                            <!-- <span class="designation">Senior Factory Manager</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/tot.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Total Energy</a></h4>
+                            <!-- <span class="designation">Senior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial-style-five end -->
+
+
+    <!-- subscribe-section -->
+    <section class="subscribe-section about-page bg-color-3">
+        <div class="container">
+            <div class="inner-box">
+                <figure class="icon-box"><img src="{5 static 'images/icons/paper-plane.png'%}" alt=""></figure>
+                <div class="content-box">
+                    <h2>Get Subscribed Now!</h2>
+                    <div class="text">The latest stowpoint news, articles, and resources, sent straight to your<br />inbox every month.</div>
+                    <form action="#" method="post" class="subscribe-form">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Type Your Email" required="">
+                            <button type="">Subscribe Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subscribe-section end -->
+
+
+    <!-- main-footer -->
+    <footer class="main-footer style-two">
+        <div class="container">
+            <div class="footer-top">
+                <div class="widget-section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget">
+                                <figure class="footer-logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo-foot.png'%}" alt=""></a></figure>
+                                <p class="text">
+                                    Stowpoint Services Limited is an indigenous oil and gas servicing company incorporated in
+                                     2017 with administrative office in Lagos Nigeria.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget company-widget footer-widget">
+                                <h4 class="widget-title">Useful Links</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="{% url 'home' %}">Home</a></li>
+                                        <li><a href="{% url 'services' %}">Services</a></li>
+                                        <li><a href="{% url 'about' %}">About</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget">
+                                <h4 class="widget-title">Services</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                        <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                        <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                        <li><a href="{% url 'marine' %}">Marine logistic </a></li>
+                                        <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                        <li><a href="{% url 'manpower' %}">Skilled Manpower</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget">
+                                <h4 class="widget-title">Contact Info</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li> <a href="#"><p>(Administrative Office) 12A Olabanji Olajide Street, Lekki , Lagos, Nigeria.</p></a></li>
+                                        <br>
+                                        <li> <a href="#"><p>(Operational Facility) Km 500 East West Road, Port-harcourt, Rivers, Nigeria.</p></a></li>
+                                        <br>
+                                        <li><a href="#">(234) 0706 444 9451</a></li>
+                                        <br>
+                                        <li><a href="#">info@stowpoint.co.uk</a></li>
+                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom clearfix">
+                <div class="copyright pull-left"><a href="#">© 2023 Stowpoint Services Limited ALL RIGHTS RESERVED </a></div>
+                <ul class="footer-social pull-right">
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+
+
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <span class="fa fa-arrow-up"></span>
+</button>
+
+
+
+<!-- jequery plugins -->
+<script src="{% static 'js/jquery.js'%}"></script>
+<script src="{%static  'js/popper.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+<script src="{% static 'js/owl.js'%}"></script>
+<script src="{% static 'js/wow.js'%}"></script>
+<script src="{% static 'js/validation.js'%}"></script>
+<script src="{% static 'js/jquery.fancybox.js'%}"></script>
+<script src="{% static 'js/appear.js'%}"></script>
+<script src="{% static 'js/aos.js'%}"></script>
+<script src="{% static 'js/isotope.js'%}"></script>
+<script src="{% static 'js/jquery.countTo.js'%}"></script>
+<script src="{% static 'js/jquery-ui.js'%}"></script>
+
+<!-- main-js -->
+<script src="{% static 'js/script.js'%}"></script>
+
+</body><!-- End of .page_wrapper -->
+
+<!-- Acto/about.html  13 Nov 2019 13:04:05 GMT -->
+</html>

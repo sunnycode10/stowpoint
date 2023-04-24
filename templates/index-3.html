@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Stowpoint - Engineering Procurment</title>
+
+<!-- Stylesheets -->
+<link href="{% static 'css/style.css'%}" rel="stylesheet">
+<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+<link rel="icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
+
+</head>
+
+<!-- page wrapper -->
+<body class="boxed_wrapper">
+
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- preloader -->
+
+
+    <!-- search-box-layout -->
+    <div class="wraper_flyout_search">
+        <div class="table">
+            <div class="table-cell">
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-close">
+                    <span class="flyout-search-close-line"></span>
+                    <span class="flyout-search-close-line"></span>
+                </div>
+                <div class="flyout_search">
+                    <div class="flyout-search-title">
+                        <h4>Search</h4>
+                    </div>
+                    <div class="flyout-search-bar">
+                        <form role="search" method="get" action="#">
+                            <div class="form-row">
+                                <input type="search" placeholder="Type to search..." value="" name="s" required="">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search-box-layout end -->
+
+
+    <!-- main header -->
+    <header class="main-header style-two">
+        <!-- header-top -->
+        <div class="header-top">
+            <div class="container">
+                <div class="inner-container clearfix">
+                    <ul class="header-info pull-left">
+                        <li>Time : Monday-Friday 09am-5pm</li>
+                        <li><i class="flaticon-telephone-auricular-with-cable"></i><a href="tel:(+234)07064449451">(234) 0706 444 9451</a></li>
+                    </ul>
+                    <ul class="header-nav pull-right">
+                        <li><a href="{% url 'services' %}">Careers</a></li>
+                        <li><a href="{% url 'contact' %}">Contacts</a></li>
+                        <li>
+                            <div class="language dropdownn">
+                                <a class="dropdown-toggle" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">Eng</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                                    <li><a href="#">Eng</a></li>
+                                    <li><a href="#">Chi</a></li>
+                                    <li><a href="#">Ger</a></li>
+                                    <li><a href="#">Fre</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- header-top end -->
+
+    
+        <!-- header-bottom -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="outer-container">
+                    <div class="nav-outer clearfix">
+                        <div class="menu-area pull-left clearfix">
+                            <figure class="logo-box"><a href="{% url 'home' %}"><img src="{% static 'images/logo-main.png'%}" alt=""></a></figure>
+                            <nav class="main-menu navbar-expand-lg">
+                                
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->      
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li class="current"><a href="{% url 'home' %}">Home</a>
+                                        </li>
+                                        <li class=""><a href="{% url 'about' %}">About Us</a>
+                                        </li> 
+                                        <li class="dropdown"><a href="{% url 'services' %}">Our services</a>
+                                            <ul>
+
+                                                <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                                <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                                <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                                <li><a href="{% url 'marine' %}">Marine logistic & Offshore </a></li>
+                                                <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                                <li><a href="{% url 'manpower' %}">Skilled Manpower  </a></li>
+                                            </ul>
+                                        </li>                              
+                                        <li class=""><a href="{% url 'contact' %}">Contact Us</a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="info-box pull-right clearfix">
+                            <!-- <div class="shop-cart"><a href="shop.html"><i class="flaticon-shopping-bag"></i><span>0</span></a></div> -->
+                            <div class="search-box">
+                                <div class="header-flyout-searchbar">!
+                                    
+                                    <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+                            <div class="btn-box"><a href="{% url 'contact' %}"><i class="fas fa-arrow-right"></i>Support</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- header-bottom end -->
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box"><a href="{% url 'home' %}"><img src="{% static 'images/logo-stick.png'%}" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu navbar-expand-lg">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->      
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li class="current"><a href="{% url 'home' %}">Home</a>
+                                </li>
+                                <li class=""><a href="{% url 'about' %}">About Us</a>
+                                </li> 
+                                <li class="dropdown"><a href="{% url 'services' %}">Our services</a>
+                                    <ul>
+
+                                        <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                        <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                        <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                        <li><a href="{% url 'marine' %}">Marine logistic & Offshore </a></li>
+                                        <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                        <li><a href="{% url 'manpower' %}">Skilled Manpower  </a></li>
+                                    </ul>
+                                </li>                              
+                                <li class=""><a href="{% url 'contact' %}">Contact Us</a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div><!-- sticky-header end -->
+    </header>
+    <!-- main-header end -->
+
+
+    <!-- main-slider -->
+    <section class="slider-style-two">
+        <div class="main-slider-carousel-2 owl-carousel owl-theme">
+            <div class="slide" style="background-image:url('/static/images/main-slider/slider-100.jpg')">
+                <div class="container">
+                    <div class="content-box">
+                        <div class="video-button"><a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a>WELCOME TO</div>
+                        <h1>Stowpoint Services Limited (SPS)</h1>
+                        <h3>Powerhouse in Engineering Procurment</h3>
+                        <div class="btn-box"><a href="{% url 'contact' %}">Get Solution</a></div>
+                        <!-- <div class="text">Manufacturers are building truly global businesses not just in terms of customers</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image:url('/static/images/main-slider/slider-200.jpg')">
+                <div class="container">
+                    <div class="content-box">
+                        <div class="video-button"><a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a> WELCOME TO</div>
+                        <h1>Stowpoint Services Limited (SPS)</h1>
+                        <h3>Powerhouse in Engineering Procurment</h3>
+                        <div class="btn-box"><a href="{% url 'contact' %}">Get Solution</a></div>
+                        <!-- <div class="text">Manufacturers are building truly global businesses not just in terms of customers</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image:url('/static/images/main-slider/slider-300.jpg')">
+                <div class="container">
+                    <div class="content-box">
+                        <div class="video-button"><a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption=""><i class="fas fa-play"></i></a> WELCOME TO</div>
+                        <h1>Stowpoint Services Limited (SPS)</h1>
+                        <h3>Powerhouse in Engineering Procurment</h3>
+                        <div class="btn-box"><a href="{% url 'contact' %}">Get Solution</a></div>
+                        <!-- <div class="text">Manufacturers are building truly global businesses not just in terms of customers</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- main-slider end -->
+
+
+    <!-- weare-section -->
+    <section class="weare-section style-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12 content-column">
+                    <div class="content-box">
+                        <div class="title-box">
+                            <!-- <h2>A brief history of Industry</h2>
+                            <div class="text">To provide uncompromised quality, affordable products and innovative services to all our clients, with due emphasis on the specifications of our clients & the standards of regulatory bodies</div> -->
+                            <div class="title-box">
+                            <h2>Who We Are:</h2>
+                            <div class="text">
+                                Stowpoint services limited is an indigenous oil and gas servicing company with a vibrant team 
+                                of professionals with vast experience in the oil and gas industry and other related industries to carry out 
+                                Procurement Support services, Supply of Commodities/Production Chemicals, provision of swamp/earth moving equipment,
+                                 Marine services, Civil works and provision of skilled Manpower etc. we work as a team to achieve the overall organizational
+                                  goal thereby driving shareholders value.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 inner-column">
+                    <div class="experience-box" style="background-image: url('/static/images/background/bg-crane.jpg');">
+                        <!-- <div class="experience-content wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <h1>30<span>Years</span></h1>
+                            <div class="text">Industries Experience</div>
+                            
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- weare-section end -->
+
+
+    <!-- ourmission-style-two -->
+    <section class="ourmission-style-two">
+        <!-- <div class="image-column" style="background-image: url(images/background/mission-bg.jpg);"></div> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12 content-column">
+                    <div class="content-box clearfix">
+                        <div class="title-text" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500"><h1></h1></div>
+                        <div class="inner-content wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="content">
+                                <h2>Our Mission</h2>
+                                <div class="text">To provide uncompromised quality, affordable products and innovative services to all our clients, with due emphasis on the specifications of our clients & the standards of regulatory bodies </div>
+                                <div class="lower-content">
+                                    <div class="text">Industry standard technical capabilities</div>
+                                    <div class="text">Commitment to the total development of the Nigerian content</div>
+                                    <div class="text">Rapid responses & rates</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 inner-column">
+                    <div class="inner-box" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                        <div class="single-item">
+                            <figure class="icon-box"><img src="{% static 'images/icons/icon-2.png'%}" alt=""></figure>
+                            <h5><a href="#">Why Stowpoint?</a></h5>
+                            <div class="text">
+                                -Fully indigenous team<br>
+                                -Industry standard technical capabilities<br>
+                                -Strategic partnerships<br>
+                                -Commitment to the total development of the Nigerian content<br>
+                                -Flexible dynamic service<br>
+                                -Rapid responses<br>
+                                -Competitive rates</div>
+                        </div>
+                        <div class="single-item">
+                            <figure class="icon-box"><img src="{% static 'images/icons/icon-3.png'%}" alt=""></figure>
+                            <h5><a href="#">Professional Team</a></h5>
+                            <div class="text">STOWPOINT Project Team comprises of professionals with vast hands-on field experience and working knowledge of planning, scheduling, design, quality assurance/quality control, cost control, procurement, material handling/control, and risk management.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ourmission-style-two end -->
+
+
+    <!-- service-style-two -->
+    <section class="service-style-two">
+        <div class="container">
+            <div class="sec-title centred">
+                <h1>Our Services </h1>
+                <!-- <p>Our experienced staff, combined with our global network, allow us to provide the<br />support you need</p> -->
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-two wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="single-item-carousel owl-carousel ">
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/pro1.jpg'%}" alt=""></figure>
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/pro2.jpg'%}" alt=""></figure>
+                                <!-- <figure class="slide-item"><img src="images/resource/medical-1.jpg" alt=""></figure> -->
+                            </div>
+                            <!-- <figure class="image-box"><a href="service-single.html"><img src="images/resource/add/service-a.jpg" alt=""></a></figure> -->
+                            <div class="lower-content">
+                                <!-- <div class="icon-box"><i class="flaticon-oil-1"></i></div> -->
+                                <h3><a href="{% url 'procurement' %}">Procurement Services</a></h3>
+                                <div class="text">
+                                    Stowpoint offers procurement and supply of quality materials including engineering 
+                                    equipment such as Valves, Gaskets, Bolts and Nuts, Pumps, Fittings etc while paying close attention to
+                                    the specifics of our clients needs.
+                                     This supply of quality materials is due to our developed longstanding relationships with several Original Equipment Manufactual services (OEMs)
+                                     and buying houses across the continet.We have leveraged on these relationships to source for quality products at the best competitive rates.
+                                     
+                                    
+                                </div>
+                                <div class="link-btn"><a href="{% url 'procurement' %}">Read More <i class="fas fa-arrow-right"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-two wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="single-item-carousel owl-carousel ">
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/mar1.jpg'%}" alt=""></figure>
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/mar2.jpg'%}" alt=""></figure>
+                                <!-- <figure class="slide-item"><img src="images/resource/medical-1.jpg" alt=""></figure> -->
+                            </div>
+                            <!-- <figure class="image-box"><a href="service-single.html"><img src="images/resource/add/service-b.jpg" alt=""></a></figure> -->
+                            <div class="lower-content">
+                                <!-- <div class="icon-box"><i class="flaticon-factory"></i></div> -->
+                                <h3><a href="{% url 'marine' %}">Marine Services</a></h3>
+                                <div class="text">Stowpoint offers provision of DSVs AKIIT, Balistic & Non Balistic security boats, air and saturation divers.</div>
+                                <div class="link-btn"><a href="{% url 'marine' %}">Read More <i class="fas fa-arrow-right"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 service-block carousel-column">
+                    <div class="service-block-two wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="single-item-carousel owl-carousel ">
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/che1.jpg'%}" alt=""></figure>
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/che2.jpg'%}" alt=""></figure>
+                                <!-- <figure class="slide-item"><img src="images/resource/medical-1.jpg" alt=""></figure> -->
+                            </div>
+                            <div class="lower-content">
+                                <!-- <div class="icon-box"><i class="flaticon-customer-support"></i></div> -->
+                                <h3><a href="{% url 'chemicals' %}">Chemicals Supply</a></h3>
+                                <div class="text">Stowpoint Services offers wide range of finest chemicals and lubricants
+                                    including production and commodity chemicals to our clients for a more effective completion of job processes. <br>
+                                    <b>Chemicals such as :</b> Xylene, Triethylene Glycol, Mono-Ethylene Glycol, amongst others   Methanol, Bentonite, Di-Ethylene Glycol.<br>
+                                    <b>lubricants such as :</b> Shell lube 
+                                    
+                                    
+                                </div>
+                                <div class="link-btn"><a href="{% url 'chemicals' %}">Read More <i class="fas fa-arrow-right"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- ROW 2 -->
+                <div class="col-lg-6 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-two wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="single-item-carousel owl-carousel ">
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/equ1.jpg'%}" alt=""></figure>
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/equ2.jpg'%}" alt=""></figure>
+                                <!-- <figure class="slide-item"><img src="images/resource/medical-1.jpg" alt=""></figure> -->
+                            </div>
+                            <!-- <figure class="image-box"><a href="service-single.html"><img src="images/resource/add/service-800.jpg" alt=""></a></figure> -->
+                            <div class="lower-content">
+                                <!-- <div class="icon-box"><i class="flaticon-customer-support"></i></div> -->
+                                <h3><a href="{% url 'equipment' %}">Equipment Rental</a></h3>
+                                <div class="text">Stowpoint Services  specialises in providing heavy duty equipments. we are continously servcing the
+                                     growing needs of oil & Gas, and marine by providing durable cost effective leasing solutions. 
+                                     Our leasing <b>services include:</b> forklift, Crane, Trucks, excavators and Generators. </div>
+                                <div class="link-btn"><a href="{% url 'equipment' %}">Read More <i class="fas fa-arrow-right"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-two wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="single-item-carousel owl-carousel ">
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/civ1.jpg'%}" alt=""></figure>
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/civ2.jpg'%}" alt=""></figure>
+                                <!-- <figure class="slide-item"><img src="images/resource/medical-1.jpg" alt=""></figure> -->
+                            </div>
+                            <div class="lower-content">
+                                <!-- <div class="icon-box"><i class="flaticon-customer-support"></i></div> -->
+                                <h3><a href="{% url 'civil' %}">Civil works </a></h3>
+                                <div class="text">
+                                    Stowpoint offers Civil and Engineering services Were we design, construct and maintain private and public sector projects. 
+                                    Our scope covers front-end engineering, design, planning, laying of asphalted roads, construction 
+                                    of foundations, including site roads and location preparation. We also remodel and expand existing buildings,
+                                     structures and roads across Nigeria.
+                                    <br>
+                                    <b>These services include:</b> Preliminary site analysis 
+                                    , Cost estimating
+                                    , Construction administration
+                                    , Feasibility studies
+                                    and Project management.
+                                </div>
+                                <div class="link-btn"><a href="{% url 'civil' %}">Read More <i class="fas fa-arrow-right"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-two wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="single-item-carousel owl-carousel ">
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/man1.jpg'%}" alt=""></figure>
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/man2.jpg'%}" alt=""></figure>
+                                <!-- <figure class="slide-item"><img src="images/resource/medical-1.jpg" alt=""></figure> -->
+                            </div>
+                            <div class="lower-content">
+                                <!-- <div class="icon-box"><i class="flaticon-customer-support"></i></div> -->
+                                <h3><a href="{% url 'manpower' %}">Skilled Manpower</a></h3>
+                                <div class="text">Stowpoint Services also plays a major role in the labour force market. We are a top notch recruitment agency both locally and international  personnels. We are grid with vast experience in the deployment of skilled, semi-skilled and unskilled workers to the oil & gas, and Marine sectors. </div>
+                                <div class="link-btn"><a href="{% url 'manpower' %}">Read More <i class="fas fa-arrow-right"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- service-style-two end -->
+
+
+    <!-- about-style-two -->
+    <section class="about-style-two">
+        <div class="container">
+            <div class="inner-content">
+                <div class="anim-icon-1"></div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="top-content">
+                                <div class="top-text">Why Trust Us</div>
+                                <h1>Our Certifications & Accreditations</h1>
+                                <!-- <h2>A better way forward manufacturers</h2> -->
+                                <div class="text">Stowpoint(SPS) has been certified by the following bodies having met the creteria to supply quality products and deliver world class services to the marine and oil & Gas industry.</div>
+                            </div>
+                            <div class="inner-box wow fadeInLeft animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-4 col-sm-12 single-column">
+                                        <div class="single-item">
+                                            <!-- <div class="icon-box"><i class="flaticon-factory-machine"></i></div> -->
+                                            <!-- <h5><a href="#">Infrastructure Heads</a></h5> -->
+                                            <!-- <div class="text">Petroleum refiners, fuel transport and end-user sales at gas stations.</div> -->
+                                            <div class=""><img src="{% static 'images/resource/add/cert-iso.svg'%}" alt=""></div>
+                                        </div>
+                                    </div>
+                                        <div class="col-lg-1 col-md-4 col-sm-12 single-column">
+                                            <div class="single-item">
+                                                <!-- <div class="icon-box"><i class="flaticon-factory-machine"></i></div> -->
+                                                <!-- <h5><a href="#">Infrastructure Heads</a></h5> -->
+                                                <!-- <div class="text">Petroleum refiners, fuel transport and end-user sales at gas stations.</div> -->
+                                                <!-- <div class=""><img src="images/resource/add/cert-iso.svg" alt=""></div> -->
+                                            </div>
+                                        </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-12 single-column">
+                                        <div class="single-item">
+                                            <!-- <div class="icon-box"><i class="flaticon-oil"></i></div>
+                                            <h5><a href="#">Petroleum Refinery</a></h5>
+                                            <div class="text">Petroleum refiners, fuel transport and end-user sales at gas stations.</div> -->
+                                            <div class=""><img src="{% static 'images/resource/add/cert-nup.svg'%}" alt=""></div>
+                                        </div>
+                                    </div>
+                                        <div class="col-lg-1 col-md-4 col-sm-12 single-column">
+                                            <div class="single-item">
+                                                <!-- <div class="icon-box"><i class="flaticon-factory-machine"></i></div> -->
+                                                <!-- <h5><a href="#">Infrastructure Heads</a></h5> -->
+                                                <!-- <div class="text">Petroleum refiners, fuel transport and end-user sales at gas stations.</div> -->
+                                                <!-- <div class=""><img src="images/resource/add/cert-iso.svg" alt=""></div> -->
+                                            </div>
+                                        </div>
+                                         <div class="col-lg-2 col-md-4 col-sm-12 single-column">
+                                        <div class="single-item">
+                                            <!-- <div class="icon-box"><i class="flaticon-oil"></i></div>
+                                            <h5><a href="#">Petroleum Refinery</a></h5>
+                                            <div class="text">Petroleum refiners, fuel transport and end-user sales at gas stations.</div> -->
+                                            <div class=""><img src="{% static 'images/resource/add/cert-hse.svg'%}" alt=""></div>
+                                        </div>
+                                            <div class="col-lg-1 col-md-4 col-sm-12 single-column">
+                                                <div class="single-item">
+                                                    <!-- <div class="icon-box"><i class="flaticon-factory-machine"></i></div> -->
+                                                    <!-- <h5><a href="#">Infrastructure Heads</a></h5> -->
+                                                    <!-- <div class="text">Petroleum refiners, fuel transport and end-user sales at gas stations.</div> -->
+                                                    <!-- <div class=""><img src="images/resource/add/cert-iso.svg" alt=""></div> -->
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-4 col-sm-12 single-column">
+                                        <div class="single-item">
+                                            <!-- <div class="icon-box"><i class="flaticon-factory-machine"></i></div> -->
+                                            <!-- <h5><a href="#">Infrastructure Heads</a></h5> -->
+                                            <!-- <div class="text">Petroleum refiners, fuel transport and end-user sales at gas stations.</div> -->
+                                            <!-- <div class=""><img src="images/resource/add/cert-iso.svg" alt=""></div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-12 single-column">
+                                        <div class="single-item">
+                                            <!-- <div class="icon-box"><i class="flaticon-oil"></i></div>
+                                            <h5><a href="#">Petroleum Refinery</a></h5>
+                                            <div class="text">Petroleum refiners, fuel transport and end-user sales at gas stations.</div> -->
+                                            <div class=""><img src="{% static 'images/resource/add/cert-nce.svg'%}" alt=""></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image-box">
+                            <div class="anim-icon-2 wow zoomIn" data-wow-delay="900ms" data-wow-duration="1500ms"></div>
+                            <figure class="image"><img src="images/about-2.jpg" alt=""></figure>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about-style-two end -->
+
+
+    <!-- project-style-two -->
+    <section class="project-style-two">
+        <div class="container">
+            <div class="sec-title centred">
+                <h1>Outlook for the Future </h1>
+                <p>In the coming years Stowpoint(SPS) aspire to..</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
+                    <div class="project-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img src="{% static 'images/gallery/fut1.jpg'%}" alt=""></figure>
+                                <a href="{% static 'images/gallery/fut1.jpg'%}" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-add"></i></a>
+                            </div>
+                            <div class="lower-content">
+                                <div class="count-number">01</div>
+                                <h3>Blending Planting</h3>
+                                <!-- <div class="text">Factory OS is revolutionizing home construction. We’ve combined pioneering technology</div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
+                    <div class="project-block-two wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img src="{% static 'images/gallery/fut2.jpg'%}" alt=""></figure>
+                                <a href="{% static 'images/gallery/fut2.jpg'%}" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-add"></i></a>
+                            </div>
+                            <div class="lower-content">
+                                <div class="count-number">02</div>
+                                <h3>NDT Filtration </h3>
+                                <!-- <div class="text">Factory OS is revolutionizing home construction. We’ve combined pioneering technology</div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 project-block">
+                    <div class="project-block-two wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img src="{% static 'images/gallery/fut3.jpg'%}" alt=""></figure>
+                                <a href="{% static 'images/gallery/fut3.jpg'%}" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-add"></i></a>
+                            </div>
+                            <div class="lower-content">
+                                <div class="count-number">03</div>
+                                <h3>Vessel</h3>
+                                <!-- <div class="text">Factory OS is revolutionizing home construction. We’ve combined pioneering technology</div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="clients-style-two">
+        <div class="container">
+            <div class="inner-container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 logo-column">
+                        <div class="sec-title">
+                            <h1 style="text-align: center;">Our Partners</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 logo-column">
+                                <div class="clients-logo-box">
+                                    <figure class="clients-logo"><a href="#"><img src="{% static 'images/clients/rjc.png'%}" alt=""></a></figure>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 logo-column">
+                                <div class="clients-logo-box">
+                                    <figure class="clients-logo"><a href="#"><img src="{% static 'images/clients/ber.png'%}" alt=""></a></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 logo-column">
+                        <div class="sec-title">
+                            <h1  style="text-align: center;">Buying House</h1>
+                        </div> 
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-12 logo-column">
+
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 logo-column">
+                                <div class="clients-logo-box">
+                                    <figure class="clients-logo"><a href="#"><img src="{% static 'images/clients/fin.png'%}" alt=""></a></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- clients-style-two end -->
+
+
+
+    <!-- testimonial-section end -->
+
+
+    <!-- team-style-two -->
+
+    <section class="team-style-two">
+        <div class="container">
+            <div class="sec-title">
+                <h1>Our Clients </h1>
+                <!-- <p>Our experienced staff, combined with our global network, allow us to<br />provide the support you need</p> -->
+            </div>
+            <div class="four-item-carousel owl-carousel owl-theme">
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/tot.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Total Energy</a></h4>
+                            <!-- <span class="designation">Senior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/she.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Shell</a></h4>
+                            <!-- <span class="designation">Senior Factory Manager</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/che.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Chevron</a></h4>
+                            <!-- <span class="designation">Senior LOTT</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/sep.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Seplat Energy</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/npd.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">NPDC</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/nln.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">NLNG</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/bws.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#"> BwOffshore</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/agi.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">AGIP</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/amn.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">AMNI</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/ndw.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">ND Western</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/elc.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Elcrest</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="#"><img src="{% static 'images/clients/wat.png'%}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <h4><a href="#">Watersmith</a></h4>
+                            <!-- <span class="designation">Junior Enginer</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- team-style-two end -->
+
+
+    <!-- callto-action-section -->
+    <section class="callto-action-section" style="background-image: url('/static/images/background/callto-action-bg.jpg');">
+        <div class="container">
+            <div class="sec-title">
+                <h1>Request a Quote</h1>
+                <!-- <p>Digital technologies are transforming the way products are designed, engineered<br />Here the Free request</p>  -->
+            </div>
+            <div class="inner-content clearfix">
+                <div class="content-column">
+                    <div class="content-box">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Name" required="">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" required="">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-group message-btn">
+                                <button type="submit">Submit Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="image-column">
+                    <figure class="image-box"><img src="{% static 'images/resource/call2.jpg'%}" alt=""></figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- callto-action-section end -->
+
+
+    <!-- news-section -->
+    <!-- <section class="news-section style-two">
+        <div class="container">
+            <div class="sec-title">
+                <h1>Our News</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 post-column">
+                    <div class="post-inner wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="post">
+                        <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-1.jpg" alt=""></a></figure>
+                            <h5><a href="blog-single.html">When a business can no longer meet the demands</a></h5>
+                            <div class="text">Our well-intentioned attempts</div>
+                            <span class="post-info">Jul 18, 2019  Read 1 Min</span>
+                        </div>
+                        <div class="post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-2.jpg" alt=""></a></figure>
+                            <h5><a href="blog-single.html">The Scariest Thing About DeepNude ware</a></h5>
+                            <div class="text">Our well-intentioned attempts</div>
+                            <span class="post-info">Jul 17, 2019  Read 5 Min</span>
+                        </div>
+                        <div class="post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-3.jpg" alt=""></a></figure>
+                            <h5><a href="blog-single.html">What Does FaceApp Do With Your Photos?</a></h5>
+                            <div class="text">Our well-intentioned attempts</div>
+                            <span class="post-info">Jul 17, 2019  Read 3 Min</span>
+                        </div>
+                        <div class="post">
+                            <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-4.jpg" alt=""></a></figure>
+                            <h5><a href="blog-single.html">Why You Need to Infuse Your Creative Practice </a></h5>
+                            <div class="text">Our well-intentioned attempts</div>
+                            <span class="post-info">Jul 16, 2019  Read 4 Min</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 inner-column">
+                    <div class="inner-content">
+                        <div class="inner-box wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms">
+                            <h2>Auto Component Manufacturers</h2>
+                            <h3>workers of the world unite</h3>
+                            <figure class="icon-box"><img src="images/icons/gear-1.png" alt=""></figure>
+                            <div class="link-btn"><a href="about.html">OUR HISTORY</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- news-section end -->
+
+
+    <!-- main-footer -->
+    <footer class="main-footer style-two">
+        <div class="container">
+            <div class="footer-top">
+                <div class="widget-section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget">
+                                <figure class="footer-logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo-foot.png'%}" alt=""></a></figure>
+                                <p class="text">
+                                    Stowpoint Services Limited is an indigenous oil and gas servicing company incorporated in
+                                     2017 with administrative office in Lagos Nigeria.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget company-widget footer-widget">
+                                <h4 class="widget-title">Useful Links</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="{% url 'home' %}">Home</a></li>
+                                        <li><a href="{% url 'services' %}">Services</a></li>
+                                        <li><a href="{% url 'about' %}">About</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget">
+                                <h4 class="widget-title">Services</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                        <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                        <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                        <li><a href="{% url 'marine' %}">Marine logistic </a></li>
+                                        <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                        <li><a href="{% url 'manpower' %}">Skilled Manpower</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget">
+                                <h4 class="widget-title">Contact Info</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li> <a href="#"><p>(Administrative Office) 12A Olabanji Olajide Street, Lekki , Lagos, Nigeria.</p></a></li>
+                                        <br>
+                                        <li> <a href="#"><p>(Operational Facility) Km 500 East West Road, Port-harcourt, Rivers, Nigeria.</p></a></li>
+                                        <br>
+                                        <li><a href="#">(234) 0706 444 9451</a></li>
+                                        <br>
+                                        <li><a href="#">info@stowpoint.co.uk</a></li>
+                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom clearfix">
+                <div class="copyright pull-left"><a href="#">© 2023 Stowpoint Services Limited ALL RIGHTS RESERVED </a></div>
+                <ul class="footer-social pull-right">
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+
+
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <span class="fa fa-arrow-up"></span>
+</button>
+
+
+
+<!-- jequery plugins -->
+<script src="{% static 'js/jquery.js'%}"></script>
+<script src="{% static 'js/popper.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+<script src="{% static 'js/owl.js'%}"></script>
+<script src="{% static 'js/wow.js'%}"></script>
+<script src="{% static 'js/validation.js'%}"></script>
+<script src="{% static 'js/jquery.fancybox.j'%}s"></script>
+<script src="{% static 'js/appear.js'%}"></script>
+<script src="{% static 'js/aos.js'%}"></script>
+<script src="{% static 'js/jquery.countTo.js'%}"></script>
+
+<!-- main-js -->
+<script src="{% static 'js/script.js'%}"></script>
+
+</body><!-- End of .page_wrapper -->
+</html>

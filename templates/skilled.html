@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<!-- Acto/service-single-2.html  13 Nov 2019 13:05:47 GMT -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Stowpoint - Engineering Procurment</title>
+
+<!-- Stylesheets -->
+<link href="{% static 'css/style.css'%}" rel="stylesheet">
+<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+<link rel="icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
+
+</head>
+
+<!-- page wrapper -->
+<body class="boxed_wrapper">
+
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- preloader -->
+
+
+    <!-- search-box-layout -->
+    <div class="wraper_flyout_search">
+        <div class="table">
+            <div class="table-cell">
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-close">
+                    <span class="flyout-search-close-line"></span>
+                    <span class="flyout-search-close-line"></span>
+                </div>
+                <div class="flyout_search">
+                    <div class="flyout-search-title">
+                        <h4>Search</h4>
+                    </div>
+                    <div class="flyout-search-bar">
+                        <form role="search" method="get" action="#">
+                            <div class="form-row">
+                                <input type="search" placeholder="Type to search..." value="" name="s" required="">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search-box-layout end -->
+
+
+    <!-- main header -->
+    <header class="main-header style-two">
+        <!-- header-top -->
+        <div class="header-top">
+            <div class="container">
+                <div class="inner-container clearfix">
+                    <ul class="header-info pull-left">
+                        <li>Time : Monday-Friday 09am-5pm</li>
+                        <li><i class="flaticon-telephone-auricular-with-cable"></i><a href="tel:(+234)07064449451">(234) 0706 444 9451</a></li>
+                    </ul>
+                    <ul class="header-nav pull-right">
+                        <!-- <li><a href="">Careers</a></li> -->
+                        <li><a href="{% url 'contact' %}">Contacts</a></li>
+                        <li>
+                            <div class="language dropdownn">
+                                <a class="dropdown-toggle" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">Eng</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                                    <li><a href="#">Eng</a></li>
+                                    <li><a href="#">Chi</a></li>
+                                    <li><a href="#">Ger</a></li>
+                                    <li><a href="#">Fre</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- header-top end -->
+
+        <!-- header-bottom -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="outer-container">
+                    <div class="nav-outer clearfix">
+                        <div class="menu-area pull-left clearfix">
+                            <figure class="logo-box"><a href="{% url 'home' %}"><img src="{% static 'images/logo-main.png'%}" alt=""></a></figure>
+                            <nav class="main-menu navbar-expand-lg">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->      
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li class=""><a href="{% url 'home' %}">Home</a>
+                                        </li>
+                                        <li class=""><a href="{% url 'about' %}">About Us</a>
+                                        </li> 
+                                        <li class="dropdown current"><a href="{% url 'services' %}">Our services</a>
+                                            <ul>
+
+                                                <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                                <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                                <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                                <li><a href="{% url 'marine' %}">Marine logistic & Offshore </a></li>
+                                                <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                                <li><a href="{% url 'manpower' %}">Skilled Manpower  </a></li>
+                                            </ul>
+                                        </li>                              
+                                        <li class=""><a href="{% url 'contact' %}">Contact Us</a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="info-box pull-right clearfix">
+                            <!-- <div class="shop-cart"><a href="shop.html"><i class="flaticon-shopping-bag"></i><span>0</span></a></div> -->
+                            <div class="search-box">
+                                <div class="header-flyout-searchbar">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+                            <div class="btn-box"><a href="{% url 'contact' %}"><i class="fas fa-arrow-right"></i>Support</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header-bottom end -->
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box"><a href="#"><img src="{% static 'images/logo-stick.png'%}" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu navbar-expand-lg">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->      
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li class=""><a href="{% url 'home' %}">Home</a>
+                                </li>
+                                <li class=""><a href="{% url 'about' %}">About Us</a>
+                                </li> 
+                                <li class="dropdown current"><a href="{% url 'services' %}">Our services</a>
+                                    <ul>
+
+                                        <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                        <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                        <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                        <li><a href="{% url 'marine' %}">Marine logistic & Offshore </a></li>
+                                        <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                        <li><a href="{% url 'manpower' %}">Skilled Manpower  </a></li>
+                                    </ul>
+                                </li>                              
+                                <li class=""><a href="{% url 'contact' %}">Contact Us</a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sticky-header end -->
+    </header>
+    <!-- main-header end -->
+
+
+    <!-- page-title-two -->
+    <section class="contact-banner centred" style="background-image: url('/static/images/background/contact-bg.jpg');">
+        <div class="container">
+            <div class="content-box">
+                <h1>Skilled  Manpower</h1>
+                <ul class="bread-crumb clearfix">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li style="color:#a62b26">Skilled Manpower</li>
+                </ul>
+                <!-- <h3>If you have any general enquiries, we'd love to hear from you</h3> -->
+            </div>
+        </div>
+    </section>
+    <!--  -->
+    <!-- <section class="page-title-two single-service-2" style="background-image: url(images/background/page-title-3.jpg);">
+        <div class="container">
+            <div class="content-box">
+                <h1>Procurment Services</h1>
+                <ul class="bread-crumb clearfix">
+                    <li><a href="index-2.html">Home</a></li>
+                    <li style="color:#a62b26">Procurment Services</li>
+                </ul>
+            </div>
+        </div>
+    </section> -->
+    <!-- page-title-two end -->
+
+
+    <!-- single-service -->
+    <section class="single-service sidebar-page-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                    <div class="sidebar service-sidebar">
+                        <div class="categories-widget sidebar-widget wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <h3 class="widget-title">Our Services</h3>
+                            <ul class="categories-list">
+                                <li><a href="{% url 'services' %}">View all Services</a></li> 
+                                <li ><a href="{% url 'procurement' %}" class="">Procurement </a></li>
+                                <li><a href="{% url 'marine' %}">Marine logistic</a></li>
+                                <li><a href="{% url 'chemicals' %}">Chemicals Supply</a></li>
+                                <li><a href="{% url 'equipment' %}"> Equipment Rental</a></li>
+                                <li><a href="{% url 'civil' %}"> Civil works</a></li>
+                                <li><a href="{% url 'manpower' %}">Skilled Manpower</a></li>
+                                <!-- <li><a href="#">Power & Energy</a></li> -->
+                            </ul>
+                        </div>
+                        <!-- <div class="support-widget sidebar-widget wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="upper-box">
+                                <h3>Any Emergency?</h3>
+                                <div class="text">Call our 24/7 customer support team at</div>
+                                <h3 class="phone"><a href="tel:01682648101">0168 26 48 101</a></h3>
+                            </div>
+                            <div class="lower-box">
+                                <h4>From upgrades, maintenance and repairs to parts and multi-year agreements</h4>
+                                <div class="text">our industrial plant services keep your generator up</div>
+                                <div class="btn-box"><a href="#"><i class="fas fa-angle-right"></i>Contact Agent</a></div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-lg-7 col-md-12 col-sm-12 carousel-column">        
+                   <div class="single-service-content">
+                        <div class="content-style-one">
+                            <div class="single-item-carousel owl-carousel ">
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/man1.jpg'%}" alt=""></figure>
+                                <figure class="slide-item"><img src="{% static 'images/resource/che/man2.jpg'%}" alt=""></figure>
+                                <!-- <figure class="slide-item"><img src="images/resource/medical-1.jpg" alt=""></figure> -->
+                            </div>
+                        </div>
+                        <div class="content-style-three">
+                            <div class="tabs-box">
+                                <div class="tab-btn-box">
+                                    <ul class="tab-btns tab-buttons clearfix">
+                                        <li class="tab-btn active-btn" data-tab="#tab-1">
+                                            <div class="icon-box"><img src="{% static 'images/icons/svg/man1.svg'%}" alt=""></div>
+                                            <h4 style="text-align: center;"> Preliminary site analysis  </h4>
+                                            <!-- <div class="text">The valve bonnet bolts' materials. </div> -->
+                                        </li>
+                                        <li class="tab-btn" data-tab="#tab-2">
+                                            <div class="icon-box"><img src="{% static 'images/icons/svg/man2.svg'%}" alt=""></div>
+                                            <h4 style="text-align: center;">Construction  </h4>
+                                            <!-- <div class="text">The valve bonnet gaskets' materials</div> -->
+                                        </li>
+   
+                                    </ul>
+                                </div>
+                                <div class="tabs-content">
+                                    <div class="tab active-tab" id="tab-1">
+                                        <div class="text">
+                                            <p>
+                                            
+                                                Stowpoint Services also plays a major role in the labour force market. We are a top notch recruitment agency both locally and international personnels. 
+                                                We are grid with vast experience in the deployment of skilled, semi-skilled and unskilled workers to the oil & gas, and Marine sectors.                            
+                                            </p>
+                                            <!-- <p>Our plant maintenance services allow you to focus on your core business while we provide the team, </p> -->
+                                        </div>
+                                        <figure class="image-box"><img src="{% static 'images/icons/svg/man-main.svg'%}" alt=""></figure>
+                                    </div>
+                                    <div class="tab" id="tab-2">
+                                        <div class="text">
+                                            <p>
+                                            
+                                                Stowpoint Services also plays a major role in the labour force market. We are a top notch recruitment agency both locally and international personnels. 
+                                                We are grid with vast experience in the deployment of skilled, semi-skilled and unskilled workers to the oil & gas, and Marine sectors.                            
+                                            </p>
+                                            <!-- <p>Our plant maintenance services allow you to focus on your core business while we provide the team, </p> -->
+                                        </div>
+                                        <figure class="image-box"><img src="{% static 'images/icons/svg/man-main.svg'%}" alt=""></figure>
+                                    </div> 
+                                    <div class="tab" id="tab-3">
+                                        <div class="text">
+                                            <!-- <p>We have a track record of on time and on budget plant outage maintenance and we can help you plan for your outages so you aren’t taken by surprise. GE offers holistic support for your outage planning to ensure that everything runs smoothly from start to finish.</p>
+                                            <p>Our plant maintenance services allow you to focus on your core business while we provide the team, </p> -->
+                                        </div>
+                                        <!-- <figure class="image-box"><img src="images/resource/single-service-7.jpg" alt=""></figure> -->
+                                    </div>            
+                                </div>
+                            </div>
+                        </div>
+                            <!-- <div class="content-style-four">
+                                <div class="title-box">
+                                    <h1>Key<br /><span>benefits</span></h1>
+                                    <h4>Our smart batteries are integrated smart energy storage systems created by Ampere to optimise your consumption.</h4>
+                                </div>
+                                <div class="inner-box">
+                                    <figure class="image-box"><img src="images/resource/single-service-8.jpg" alt=""></figure>
+                                    <div class="content-box wow fadeInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <div class="single-box">
+                                            <h4>15+ years lifetime</h4>
+                                            <div class="text">With mature components</div>
+                                        </div>
+                                        <div class="single-box">
+                                            <h4>Lowest cost</h4>
+                                            <div class="text">locatable technology at utility scale. lowest cost</div>
+                                        </div>
+                                        <div class="single-box">
+                                            <h4>70% efficiency</h4>
+                                            <div class="text">in standalone configuration</div>
+                                        </div>
+                                        <div class="single-box">
+                                            <h4>~60% efficiency</h4>
+                                            <div class="text">by utilising waste heat/cold</div>
+                                        </div>
+                                        <div class="single-box">
+                                            <h4>Zero emissions</h4>
+                                            <div class="text">and benign materials</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- single-service end -->
+
+
+    <!-- main-footer -->
+    <footer class="main-footer style-two">
+        <div class="container">
+            <div class="footer-top">
+                <div class="widget-section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget">
+                                <figure class="footer-logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo-foot.png'%}" alt=""></a></figure>
+                                <p class="text">
+                                    Stowpoint Services Limited is an indigenous oil and gas servicing company incorporated in
+                                     2017 with administrative office in Lagos Nigeria.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget company-widget footer-widget">
+                                <h4 class="widget-title">Useful Links</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="{% url 'home' %}">Home</a></li>
+                                        <li><a href="{% url 'services' %}">Services</a></li>
+                                        <li><a href="{% url 'about' %}">About</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget">
+                                <h4 class="widget-title">Services</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="{% url 'procurement' %}">Procurement </a></li>
+                                        <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                        <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
+                                        <li><a href="{% url 'marine' %}">Marine logistic </a></li>
+                                        <li><a href="{% url 'civil' %}">Civil Works </a></li>
+                                        <li><a href="{% url 'manpower' %}">Skilled Manpower</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget">
+                                <h4 class="widget-title">Contact Info</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li> <a href="#"><p>(Administrative Office) 12A Olabanji Olajide Street, Lekki , Lagos, Nigeria.</p></a></li>
+                                        <br>
+                                        <li> <a href="#"><p>(Operational Facility) Km 500 East West Road, Port-harcourt, Rivers, Nigeria.</p></a></li>
+                                        <br>
+                                        <li><a href="#">(234) 0706 444 9451</a></li>
+                                        <br>
+                                        <li><a href="#">info@stowpoint.co.uk</a></li>
+                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom clearfix">
+                <div class="copyright pull-left"><a href="#">© 2023 Stowpoint Services Limited ALL RIGHTS RESERVED </a></div>
+                <ul class="footer-social pull-right">
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+
+
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <span class="fa fa-arrow-up"></span>
+</button>
+
+
+
+<!-- jequery plugins -->
+<script src="{% static 'js/jquery.js'%}"></script>
+<script src="{%static  'js/popper.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+<script src="{% static 'js/owl.js'%}"></script>
+<script src="{% static 'js/wow.js'%}"></script>
+<script src="{% static 'js/validation.js'%}"></script>
+<script src="{% static 'js/jquery.fancybox.js'%}"></script>
+<script src="{% static 'js/appear.js'%}"></script>
+<script src="{% static 'js/aos.js'%}"></script>
+<script src="{% static 'js/isotope.js'%}"></script>
+<script src="{% static 'js/jquery.countTo.js'%}"></script>
+<script src="{% static 'js/jquery-ui.js'%}"></script>
+
+<!-- main-js -->
+<script src="{% static 'js/script.js'%}"></script>
+
+</body><!-- End of .page_wrapper -->
+
+<!-- Acto/service-single-2.html  13 Nov 2019 13:05:56 GMT -->
+</html>
