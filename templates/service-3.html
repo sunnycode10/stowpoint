@@ -12,7 +12,7 @@
 <!-- Stylesheets -->
 <link href="{% static 'css/style.css'%}" rel="stylesheet">
 <link href="{% static 'css/responsive.css'%}" rel="stylesheet">
-<link rel="icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
+<link rel="icon" href="{% static 'images/use/favicon.ico'%}" type="image/x-icon">
 
 </head>
 
@@ -90,7 +90,7 @@
                 <div class="outer-container">
                     <div class="nav-outer clearfix">
                         <div class="menu-area pull-left clearfix">
-                            <figure class="logo-box"><a href="{% url 'home' %}"><img src="{% static 'images/logo-main.png'%}" alt=""></a></figure>
+                            <figure class="logo-box"><a href="{% url 'home' %}"><img src="{% static 'images/use/logo-main.png'%}" alt=""></a></figure>
                             <nav class="main-menu navbar-expand-lg">
                                 <div class="navbar-header">
                                     <!-- Toggle Button -->      
@@ -110,7 +110,7 @@
                                             <ul>
 
                                                 <li><a href="{% url 'procurement' %}">Procurement </a></li>
-                                                <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                                <li><a href="{% url 'chemicals' %}">Chemical Supply  </a></li>
                                                 <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
                                                 <li><a href="{% url 'marine' %}">Marine logistic & Offshore </a></li>
                                                 <li><a href="{% url 'civil' %}">Civil Works </a></li>
@@ -162,7 +162,7 @@
                                     <ul>
 
                                         <li><a href="{% url 'procurement' %}">Procurement </a></li>
-                                        <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                        <li><a href="{% url 'chemicals' %}">Chemical Supply  </a></li>
                                         <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
                                         <li><a href="{% url 'marine' %}">Marine logistic & Offshore </a></li>
                                         <li><a href="{% url 'civil' %}">Civil Works </a></li>
@@ -183,7 +183,7 @@
 
 
     <!-- service-banner -->
-    <section class="contact-banner centred" style="background-image: url('/static/images/background/contact-bg.jpg');">
+    <section class="contact-banner centred" style="background-image: url('/static/images/use/background/contact-bg.jpeg');">
         <div class="container">
             <div class="content-box">
                 <h1>Our Services</h1>
@@ -210,7 +210,7 @@
                                 <div class="left-layer"></div>
                                 <div class="right-layer"></div>
                                 <div class="icon-box">
-                                    <img src="{% static 'images/icons/svg/pro.svg'%}" alt="">
+                                    <img src="{% static 'images/use/icons/svg/pro.svg'%}" alt="">
                                 </div>
                                 <h3><a href="{% url 'procurement' %}">Procurement </a></h3>
                                 <div class="text">Stowpoint offers procurement and supply of quality materials including engineering equipment such as Valves,Gaskets,Bolts and Nuts, Pumps, Fittings etc while paying close attention to the specifics of our client’s needs.</div>
@@ -224,10 +224,18 @@
                                 <div class="left-layer"></div>
                                 <div class="right-layer"></div>
                                 <div class="icon-box">
-                                    <img src="{% static 'images/icons/svg/mar.svg'%}" alt="">
+                                    <img src="{% static 'images/use/icons/svg/mar.svg'%}" alt="">
                                 </div>
                                 <h3><a href="{% url 'marine' %}">Marine logistic</a></h3>
-                                <div class="text">Stowpoint offers provision of DSVs AKIIT, Balistic & Non Balistic security boats, air and saturation divers.</div>
+                                <div class="text">Stowpoint offers provision of
+    
+                                    <ul>
+                                        <li class="str">*Dive Support Vessels(DSV)</li>
+                                        <li class="str">*Anchor Handling Tug Supply(AKHTS)</li>
+                                        <li class="str">*Security Boats(Ballistic & Non Ballistic)</li>
+                                        <li >*Crew/Pilot Support Boats</li>
+                                    </ul>
+                                  </div>
                                 <div class="btn-box"><a href="{% url 'marine' %}">Explore</a></div>
                             </div>
                         </div>
@@ -238,9 +246,9 @@
                                 <div class="left-layer"></div>
                                 <div class="right-layer"></div>
                                 <div class="icon-box">
-                                    <img src="{% static 'images/icons/svg/che.svg'%}" alt="">
+                                    <img src="{% static 'images/use/icons/svg/che.svg'%}" alt="">
                                 </div>
-                                <h3><a href="{% url 'chemicals' %}">Chemicals Supply</a></h3>
+                                <h3><a href="{% url 'chemicals' %}">Chemical Supply</a></h3>
                                 <div class="text">We offer wide range of chemicals including production and commodity chemicals such as Xyline.</div>
                                 <div class="btn-box"><a href="{% url 'chemicals' %}">Explore</a></div>
                             </div>
@@ -252,7 +260,7 @@
                                 <div class="left-layer"></div>
                                 <div class="right-layer"></div>
                                 <div class="icon-box">
-                                    <img src="{% static 'images/icons/svg/ren.svg'%}" alt="">
+                                    <img src="{% static 'images/use/icons/svg/ren.svg'%}" alt="">
                                 </div>
                                 <h3><a href="{% url 'equipment' %}">Equipment Rental</a></h3>
                                 <div class="text">SPs specialises in providing heavy duty equipments. we're continously servcing the growing needs of oil & Gas, and marine by providing cost effecive and durable cost effective leasing solutions. Our leasing <b>services include:</b> forklitf, Crane, Trucks, escavetors and Generators.</div>
@@ -266,7 +274,7 @@
                                 <div class="left-layer"></div>
                                 <div class="right-layer"></div>
                                 <div class="icon-box">
-                                    <img src="{% static 'images/icons/svg/cil.svg'%}" alt="">
+                                    <img src="{% static 'images/use/icons/svg/cil.svg'%}" alt="">
                                 </div>
                                 <h3><a href="{% url 'civil' %}">Civil works</a></h3>
                                 <div class="text">Civil Engineering services
@@ -282,7 +290,7 @@
                                 <div class="left-layer"></div>
                                 <div class="right-layer"></div>
                                 <div class="icon-box">
-                                    <img src="{% static 'images/icons/svg/man.svg' %}" alt="">
+                                    <img src="{% static 'images/use/icons/svg/man.svg' %}" alt="">
                                 </div>
                                 <h3><a href="{% url 'manpower' %}">Skilled Manpower</a></h3>
                                 <div class="text">Stowpoint  also plays a major role in the labour force market. We are a top notch recruitment agency both locally and international  personnels. We are grid with vast experience in the deployment of skilled, semi-skilled and unskilled workers to the oil & gas, and Marine sectors.</div>
@@ -337,7 +345,7 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="logo-widget footer-widget">
-                                <figure class="footer-logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo-foot.png'%}" alt=""></a></figure>
+                                <figure class="footer-logo"><a href="{% url 'home' %}"><img src="{% static 'images/use/logo-foot.png'%}" alt=""></a></figure>
                                 <p class="text">
                                     Stowpoint Services Limited is an indigenous oil and gas servicing company incorporated in
                                      2017 with administrative office in Lagos Nigeria.
@@ -365,7 +373,7 @@
                                 <div class="widget-content">
                                     <ul>
                                         <li><a href="{% url 'procurement' %}">Procurement </a></li>
-                                        <li><a href="{% url 'chemicals' %}">Chemicals Supply  </a></li>
+                                        <li><a href="{% url 'chemicals' %}">Chemical Supply  </a></li>
                                         <li><a href="{% url 'equipment' %}">Equipment Rental </a></li>
                                         <li><a href="{% url 'marine' %}">Marine logistic </a></li>
                                         <li><a href="{% url 'civil' %}">Civil Works </a></li>
