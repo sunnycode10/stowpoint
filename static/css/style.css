@@ -345,7 +345,7 @@ img {
   background-color:#ffffff;
   background-position:center center;
   background-repeat:no-repeat;
-  background-image:url(../images/icons/preloader.gif);
+  background-image:url('/static/images/use/icons/preloader.gif');
 }
 
 .scroll-top {
